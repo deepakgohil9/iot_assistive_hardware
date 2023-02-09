@@ -7,7 +7,7 @@
 #include <Servo.h>
 
 #define txRxPinsSerial Serial
-#define productUID "com.gmail.aditya311001rj:test1"
+#define productUID "<product_uid>"
 
 #define LDRPIN D1
 #define FLAMEPIN D2
@@ -19,8 +19,8 @@
 
 #define DHTTYPE DHT11
 
-const char *ssid = "Deepak ";
-const char *password = "11223344";
+const char *ssid = "<ssid_name>";
+const char *password = "<password>";
 
 Notecard notecard;
 DHT dht(DHTPIN, DHTTYPE);
@@ -68,7 +68,7 @@ void loop()
 
         HTTPClient https;
 
-        if (https.begin(*client, "https://elegant-colt-hosiery.cyclic.app/control/get/1"))
+        if (https.begin(*client, "<base_url>/control/get/1"))
         {
             int httpCode = https.GET();
             if (httpCode > 0)
@@ -95,7 +95,7 @@ void loop()
             Serial.printf("[HTTPS] Unable to connect\n");
         }
 
-        if (https.begin(*client, "https://elegant-colt-hosiery.cyclic.app/control/get/2"))
+        if (https.begin(*client, "<base_url>/control/get/2"))
         {
             int httpCode = https.GET();
             if (httpCode > 0)
@@ -122,7 +122,7 @@ void loop()
             Serial.printf("[HTTPS] Unable to connect\n");
         }
 
-        if (https.begin(*client, "https://elegant-colt-hosiery.cyclic.app/control/get/3"))
+        if (https.begin(*client, "<base_url>/control/get/3"))
         {
             int httpCode = https.GET();
             if (httpCode > 0)
